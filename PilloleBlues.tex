@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%% PILLOLE BLUES LOGO %%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+  paperheight = 22.5cm,
+  paperwidth  = 22.5cm,
+  margin      =  1.0cm,
+  bottom      =  0.7cm
+]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian,english]{babel}
+
+\usepackage{bbding}
+\usepackage{pgfornament}
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+
+%%%%%%%%%%%%%%%%%%%%  FONTS  %%%%%%%%%%%%%%%%%%%%
+
+% Latin modern
+\usepackage{lmodern}
+
+%\usepackage{fontspec}
+%\setmainfont{QTBodiniPoster}
+%\setmainfont{QTBlimpo}
+%\setmainfont{QTGraphLite}
+
+% Default font family
+\renewcommand{\familydefault}{\ttdefault} % Monospace
+\renewcommand{\shapedefault}{it}          % Italics
+
+%%%%%%%%%%%%%%%%%%%% COLOURS %%%%%%%%%%%%%%%%%%%%
+
+% Define colurs 
+\usepackage{xcolor}
+\definecolor{antiquewhite}{rgb}{0.98, 0.92, 0.84}
+\definecolor{carolinablue}{rgb}{0.50, 0.68, 0.85}
+\definecolor{bluegray}{rgb}{0.40, 0.60, 0.80}
+\definecolor{carminepink}{rgb}{0.95, 0.30, 0.26}
+\definecolor{carminered}{rgb}{0.98, 0.10, 0.22}
+
+% Associate colors for COLOURED LOGO
+%\newcommand{\backgroundcol}{antiquewhite!75!white}
+%\newcommand{\textcol}{black}
+%\newcommand{\upperpilloutercol}{bluegray}
+%\newcommand{\upperpillinnercol}{carolinablue}
+%\newcommand{\lowerpilloutercol}{carminered}
+%\newcommand{\lowerpillinnercol}{carminepink}
+
+% Associate colors for BLACK & WHITE LOGO
+\newcommand{\backgroundcol}{black}
+\newcommand{\textcol}{antiquewhite!10!white}
+\newcommand{\upperpilloutercol}{black}
+\newcommand{\upperpillinnercol}{black}
+\newcommand{\lowerpilloutercol}{black}
+\newcommand{\lowerpillinnercol}{black}
+
+%%%%%%%%%%%%%%%%%%  SETTINGS   %%%%%%%%%%%%%%%%%%
+
+\newcommand{\aspectratio}{2}
+\newcommand{\ornmenttype}{61}
+\newcommand{\ornmentline}{88}
+
+%%%%%%%%%%%%%%%%%%%%  LOGO   %%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  \begin{tikzpicture}[remember picture,overlay]  
+    \node[xshift=+0.5cm, yshift=-0.5cm, anchor=north west] (CNW) at (current page.north west)
+    {\pgfornament[width=2.00cm, color=\textcol]{\ornmenttype}};
+    \node[xshift=-0.5cm, yshift=-0.5cm, anchor=north east] (CNE) at (current page.north east)
+    {\pgfornament[width=2.00cm, symmetry=v, color=\textcol]{\ornmenttype}};
+    \node[xshift=+0.5cm, yshift=+0.5cm, anchor=south west] (CSW) at (current page.south west)
+    {\pgfornament[width=2.00cm, symmetry=h, color=\textcol]{\ornmenttype}};
+    \node[xshift=-0.5cm, yshift=+0.5cm, anchor=south east] (CSE) at (current page.south east)
+    {\pgfornament[width=2.00cm, symmetry=c, color=\textcol]{\ornmenttype}};
+    \node[xshift=+0.0cm, yshift=-1.0cm, anchor=south] at (current page.north)
+    {\pgfornament[width=6.00cm, color=\textcol]{\ornmentline}};
+    \node[xshift=+0.0cm, yshift=+0.5cm, anchor=south] at (current page.south)
+    {\pgfornament[width=6.00cm, symmetry=v, color=\textcol]{\ornmentline}};
+    \node[xshift=-0.5cm, yshift=+0.0cm, anchor=south, rotate=90] at (current page.east)
+    {\pgfornament[width=6.00cm, symmetry=h, color=\textcol]{\ornmentline}};
+    \node[xshift=+1.0cm, yshift=+0.0cm, anchor=south, rotate=90] at (current page.west)
+    {\pgfornament[width=6.00cm, symmetry=c, color=\textcol]{\ornmentline}};
+    %\draw[color = \textcol]
+    %     ([xshift = +0.5cm, yshift = -0.5cm] current page.north west)
+    %     rectangle
+    %     ([xshift = -0.5cm, yshift = +0.5cm] current page.south east);
+  \end{tikzpicture}
+
+  % Center everything by default
+  \centering
+
+  % Set page style
+  \thispagestyle{empty}
+
+  % Set background color
+  \pagecolor{\backgroundcol}
+
+  % Event information
+  \vspace*{1.0cm}
+  \begin{minipage}[c]{0.1\textwidth}
+    \centering
+    \color{\textcol}\scalebox{1.5}{\Huge\HandRight}
+  \end{minipage}
+  \begin{minipage}[c]{0.6\textwidth}
+    \centering
+    \color{\textcol}{\huge\MakeUppercase{
+      Sidewalk Trento $\bullet$ 16.05.19 \\[10pt]
+      Open Mic $\bullet$ Bookique
+    }}
+  \end{minipage}
+  \begin{minipage}[c]{0.1\textwidth}
+    \centering
+    \color{\textcol}\scalebox{1.5}{\Huge\HandLeft}
+  \end{minipage}
+
+  % Vertical filling for spacing
+  \vfill
+  
+  % Upper pill
+  \begin{tikzpicture}
+
+    % Outer region
+    \node[draw, diamond,
+          rounded corners = 2.0cm,
+          line width      = 0.8mm,
+          color           = \textcol,
+          fill            = \upperpilloutercol,
+          text            = \textcol,
+          aspect          = \aspectratio]
+          {\Huge\scalebox{2.4}{~~~~~~~~~~}};
+    
+    % Inner region
+    \node[draw, diamond, dashed,
+         dash pattern    = on 150pt off 3pt on 15pt off 3pt on 8pt off 3pt on 3pt off 150pt,
+         rounded corners = 1.9cm,
+         line width      = 0.2mm,
+         color           = \textcol,
+         fill            = \upperpillinnercol,
+         text            = \textcol,
+         aspect          = \aspectratio]
+         {\Huge\scalebox{2.4}{Pillole}};
+	\end{tikzpicture}
+	
+  % Lower pill
+	\begin{tikzpicture}
+
+    % Outer region
+    \node[draw, diamond,
+          rounded corners = 2.0cm,
+          line width      = 0.8mm,
+          color           = \textcol,
+          fill            = \lowerpilloutercol,
+          text            = \textcol,
+          aspect          = \aspectratio]
+          {\Huge\scalebox{2.4}{~~~~~~~~~~}};
+
+    % Inner region
+    \node[draw, diamond, dashed,
+          dash pattern    = on 150pt off 3pt on 15pt off 3pt on 8pt off 3pt on 3pt off 150pt,
+          rounded corners = 1.9cm,
+          line width      = 0.2mm,
+          color           = \textcol,
+          fill            = \lowerpillinnercol,
+          text            = \textcol,
+          aspect          = \aspectratio]
+          {\Huge\scalebox{2.4}{~Blues~}};
+
+	\end{tikzpicture}
+	
+  % Vertical filling for spacing
+	\vfill
+
+	% Band members
+  \color{\textcol}{
+  \begin{tabular}{lcr}
+    \LARGE{~Voce~~~~} & $\quad\qquad$ & 
+    \LARGE{Chitarra} \\[6pt]
+    \huge{~Federico Baracchi} & $\quad\qquad$ &
+    \huge{~~Fiorenzo Melotti}
+  \end{tabular}
+  }
+  \vspace*{1.5cm}
+
+\end{document}
+
+% That's all Folks!
